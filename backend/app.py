@@ -24,6 +24,11 @@ def register():
     password = data.get('password')
     return jsonify({"message": "User registered successfully"}), 201
 
+@app.route('/auth/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    return jsonify({"message": "Login successful", "token": "..."}), 200
+    
 @app.route('/')
 def home():
     return {"status": "Backend is running"}, 200
