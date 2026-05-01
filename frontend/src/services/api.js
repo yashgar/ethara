@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = 'http://localhost:5000/api';
 
 const api = axios.create({
-  baseURL: 'https://your-backend-url.up.railway.app',
+  baseURL: 'https://ethara-production-59e3.up.railway.app/',
 });
 
 api.interceptors.request.use(
