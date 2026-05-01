@@ -144,7 +144,7 @@ GET /: Basic server health check.
 
 GET /api/status: Detailed API status check.
 
-☁️ Deployment
+Deployment
 
 This project is optimized for deployment on platforms like Railway or Render.
 
