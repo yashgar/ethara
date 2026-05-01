@@ -1,7 +1,7 @@
 from db.db import db
 
 class UserModel:
-    collection = db['users']
+    collection = db.users
 
     @staticmethod
     def create_user(username, password_hash, role="Member", skills=None):
