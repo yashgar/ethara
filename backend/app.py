@@ -8,11 +8,16 @@ from routes.project_routes import project_bp
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 app.register_blueprint(auth_bp, url_prefix='/api/auth')
 app.register_blueprint(task_bp, url_prefix='/api/tasks')
 app.register_blueprint(project_bp, url_prefix='/api/projects')
+
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.json
+    print(f"Received data: {data}")
 
 @app.route('/')
 def home():
