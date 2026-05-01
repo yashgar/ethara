@@ -14,6 +14,10 @@ app.register_blueprint(auth_bp, url_prefix='/api/auth')
 app.register_blueprint(task_bp, url_prefix='/api/tasks')
 app.register_blueprint(project_bp, url_prefix='/api/projects')
 
+@app.route('/')
+def home():
+    return {"status": "Backend is running"}, 200
+    
 @app.route('/api/status', methods=['GET'])
 def server_status():
     return jsonify({"status": "success", "message": "Ethara Backend is running!"}), 200
