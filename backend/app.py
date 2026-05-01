@@ -13,21 +13,6 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 app.register_blueprint(auth_bp, url_prefix='/api/auth')
 app.register_blueprint(task_bp, url_prefix='/api/tasks')
 app.register_blueprint(project_bp, url_prefix='/api/projects')
-
-@app.route('/auth/register', methods=['POST'])
-def register():
-    data = request.get_json()
-    print(f"DEBUG: Data received from frontend: {data}")
-    if not data:
-        return {"error": "Missing JSON data"}, 400
-    username = data.get('username')
-    password = data.get('password')
-    return jsonify({"message": "User registered successfully"}), 201
-
-@app.route('/auth/login', methods=['POST'])
-def login():
-    data = request.get_json()
-    return jsonify({"message": "Login successful", "token": "..."}), 200
     
 @app.route('/')
 def home():
