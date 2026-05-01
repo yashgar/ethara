@@ -14,7 +14,7 @@ app.register_blueprint(auth_bp, url_prefix='/api/auth')
 app.register_blueprint(task_bp, url_prefix='/api/tasks')
 app.register_blueprint(project_bp, url_prefix='/api/projects')
 
-@app.route('/register', methods=['POST'])
+@app.route('/auth/register', methods=['POST'])
 def register():
     data = request.get_json()
     print(f"DEBUG: Data received from frontend: {data}")
