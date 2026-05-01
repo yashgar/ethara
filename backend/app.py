@@ -22,6 +22,7 @@ def register():
         return {"error": "Missing JSON data"}, 400
     username = data.get('username')
     password = data.get('password')
+    return jsonify({"message": "User registered successfully"}), 201
 
 @app.route('/')
 def home():
