@@ -6,7 +6,7 @@ export default defineConfig({
   preview: {
     port: 8080,
     strictPort: true,
-    host: true,
-    allowedHosts: ['all']
+    host: "0.0.0.0",
+    allowedHosts: ["heroic-enthusiasm-production-83b6.up.railway.app", "all"]
   }
 })
