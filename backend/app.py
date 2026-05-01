@@ -17,6 +17,7 @@ app.register_blueprint(project_bp, url_prefix='/api/projects')
 @app.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
+    print(f"DEBUG: Data received from frontend: {data}")
     if not data:
         return {"error": "Missing JSON data"}, 400
     username = data.get('username')
